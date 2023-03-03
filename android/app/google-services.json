@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "286977500811",
+    "project_id": "motorapp-6ce14",
+    "storage_bucket": "motorapp-6ce14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286977500811:android:2dce6e406512f775eb168e",
+        "android_client_info": {
+          "package_name": "com.example.motorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286977500811-9nsd0idcb5cgd9ggpiskkrcanktoh3ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4VdQkQ24t3aN5l9DVNVJctjKxNg4q-X8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286977500811-9nsd0idcb5cgd9ggpiskkrcanktoh3ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
