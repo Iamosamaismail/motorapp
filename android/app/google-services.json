@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "286977500811",
-    "project_id": "motorapp-6ce14",
-    "storage_bucket": "motorapp-6ce14.appspot.com"
+    "project_number": "1065510176316",
+    "project_id": "water-level-pro",
+    "storage_bucket": "water-level-pro.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:286977500811:android:2dce6e406512f775eb168e",
+        "mobilesdk_app_id": "1:1065510176316:android:82d7321c8e59ba6bde2539",
         "android_client_info": {
           "package_name": "com.example.motorapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "286977500811-9nsd0idcb5cgd9ggpiskkrcanktoh3ho.apps.googleusercontent.com",
+          "client_id": "1065510176316-ktq4vhm4e81281s9u3kkdpbier4na5r1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC4VdQkQ24t3aN5l9DVNVJctjKxNg4q-X8"
+          "current_key": "AIzaSyARKKmV-cLvG_x59Iy3ty1RHirn4nIlET8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "286977500811-9nsd0idcb5cgd9ggpiskkrcanktoh3ho.apps.googleusercontent.com",
+              "client_id": "1065510176316-ktq4vhm4e81281s9u3kkdpbier4na5r1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

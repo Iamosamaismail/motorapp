@@ -1,14 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:motorapp/HomePage.dart';
-import 'package:overlay_support/overlay_support.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:simple_animations/simple_animations.dart';
 import '../Bouncing.dart';
-import 'package:flutter/services.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,24 +11,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  late FirebaseAuth _auth;
-  late User _user;
-
-  // String password = '';
   String username = '';
 
   final TextEditingController controller = TextEditingController();
   final GlobalKey<FormState> formKey1 = GlobalKey<FormState>();
-
   bool isloading = true;
   String email = '';
   String password = '';
-  String u1 = "osama";
-  String p1 = "123";
-  String u2 = "adnan";
-  String p2 = "1234";
-
-
+  String u1 = "muzammil";
+  String p1 = "muzammil";
+  String u2 = "bilal";
+  String p2 = "bilal";
   // String Ura = 'http://182.176.105.147:6363/api/evan/user/signup-password?';
 
   String error = '';
@@ -44,8 +32,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -53,25 +39,50 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/back.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
             padding: const EdgeInsets.all(10),
             margin: const EdgeInsets.only(top: 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                // Container(
+                //     decoration: const BoxDecoration(
+                //       image: DecorationImage(
+                //         image: AssetImage("assets/icon/logo.png"),
+                //       ),
+                //     ),
+                //     // alignment: Alignment.bottomCenter,
+                //     height: 210,
+                //     padding: const EdgeInsets.all(5),
+                //     child: const Text("Login",
+                //         style: TextStyle(
+                //             fontWeight: FontWeight.bold, fontSize: 50))),
                 Container(
-                    alignment: Alignment.bottomCenter,
-                    height: 210,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white,
+                      image: DecorationImage(
+                        image: AssetImage("assets/icon/logo.png"),
+                      ),
+                    ),
+                    // alignment: Alignment.bottomCenter,
+                    height: 80,
+                    width: 200,
                     padding: const EdgeInsets.all(5),
-                    child: const Text("Login",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30))),
+                  margin: EdgeInsets.only(top: 100),
+                    ),
                 _keyboardIsVisible()
                     ? const SizedBox(
-                        height: 0,
+                        height: 10,
                       )
                     : const SizedBox(
-                        height: 50,
+                        height: 60,
                       ),
                 Form(
                   key: formKey1,
@@ -100,35 +111,35 @@ class _LoginPageState extends State<LoginPage> {
                               filled: true,
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               hintStyle:
                                   TextStyle(color: Colors.grey.withOpacity(.8)),
-                              prefixIcon: Icon(Icons.perm_identity_outlined),
+                              prefixIcon: const Icon(Icons.perm_identity_outlined),
                               hintText: "Enter your username"),
                           validator: (String? val1) {
                             return (val1!.isEmpty) ? 'Enter Username' : null;
@@ -149,6 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
+                          obscureText: true,
                           onChanged: (val2) {
                             setState(() => password = val2);
                           },
@@ -157,28 +169,28 @@ class _LoginPageState extends State<LoginPage> {
                               filled: true,
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Colors.white,
                                     width: 2,
                                     style: BorderStyle.none),
@@ -190,7 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                               // ),
                               hintStyle:
                                   TextStyle(color: Colors.grey.withOpacity(.8)),
-                              prefixIcon: Icon(Icons.lock_open_outlined),
+                              prefixIcon: const Icon(Icons.lock_open_outlined),
                               hintText: "Enter password"),
                           validator: (String? val1) {
                             return (val1!.isEmpty) ? 'Enter Password' : null;
@@ -206,10 +218,10 @@ class _LoginPageState extends State<LoginPage> {
                   width: MediaQuery.of(context).size.width,
                 ),
                 _keyboardIsVisible()
-                    ? SizedBox(
+                    ? const SizedBox(
                         height: 10,
                       )
-                    : SizedBox(
+                    : const SizedBox(
                         height: 30,
                       ),
                 Bouncing(
@@ -220,14 +232,14 @@ class _LoginPageState extends State<LoginPage> {
                             width: MediaQuery.of(context).size.width / 1.7,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 colors: <Color>[
-                                  Colors.red,
-                                  Color(0xFFD23E19),
-                                  Color(0xFFF57542),
+                                  Colors.blueAccent,
+                                  Colors.blue,
+                                  Colors.deepPurple,
                                 ],
                               ),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                     color: Colors.black26, blurRadius: 5.0)
                               ],
@@ -240,21 +252,16 @@ class _LoginPageState extends State<LoginPage> {
                                 //minimumSize: Size(width /1.7, 10),
                                 //maximumSize: Size(width / 2, 20),
                                 padding: const EdgeInsets.all(10.0),
-                                primary: Colors.white,
+                                foregroundColor: Colors.white,
                                 //textStyle: const TextStyle(fontSize: 13),
                               ),
                               onPressed: () async {
-                                print(username);
-                                print(password);
-
-                                if (username == u1) {
-                                  if(password == p1){
+                                if (username.toLowerCase() == u1) {
+                                  if(password.toLowerCase() == p1){
                                     setState(() {
                                       isloading = false;
-                                      print("false");
-
                                     });
-                                    Future.delayed(Duration(milliseconds: 3000), () {
+                                    Future.delayed(const Duration(milliseconds: 3000), () {
                                       Navigator.pushReplacement(
                                           context,
                                           PageTransition(
@@ -263,15 +270,17 @@ class _LoginPageState extends State<LoginPage> {
 
                                     });
                                   }
+                                  else{
+                                    showSimpleNotification(const Text("Wrong Password"),
+                                        background: Colors.lightBlueAccent);
+                                  }
                                 }
-                                if (username == u2) {
-                                  if(password == p2){
+                                else if (username.toLowerCase() == u2) {
+                                  if(password.toLowerCase() == p2){
                                     setState(() {
                                       isloading = false;
-                                      print("false");
-
                                     });
-                                    Future.delayed(Duration(milliseconds: 3000), () {
+                                    Future.delayed(const Duration(milliseconds: 3000), () {
                                       Navigator.pushReplacement(
                                           context,
                                           PageTransition(
@@ -280,13 +289,22 @@ class _LoginPageState extends State<LoginPage> {
 
                                     });
                                   }
+                                  else{
+                                    showSimpleNotification(const Text("Wrong Password"),
+                                        background: Colors.lightBlueAccent);
+                                  }
+                                }
+                                else{
+                                  showSimpleNotification(const Text("UserName Not exists"),
+                                      background: Colors.lightBlueAccent);
                                 }
 
-                              },
+                              }
+                              ,
                               child:
-                                  const Text("Show my energy consumption   "),
+                                  const Text("LOGIN"),
                             ))
-                        : CircularProgressIndicator(),
+                        : const CircularProgressIndicator(),
                   ),
                 ),
                 Expanded(
@@ -300,7 +318,7 @@ class _LoginPageState extends State<LoginPage> {
                           ? const SizedBox(
                               height: 0,
                             )
-                          : Expanded(
+                          : const Expanded(
                               child: SizedBox(
                                 height: 520,
                               ),
@@ -311,16 +329,16 @@ class _LoginPageState extends State<LoginPage> {
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("Need an account?",
-                                        style: TextStyle(color: Colors.grey)),
+                                    const Text("Need an account?",
+                                        style: TextStyle(color: Colors.white)),
                                     TextButton(
                                       style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all<Color>(
-                                                Colors.blue),
+                                                Colors.black),
                                       ),
                                       onPressed: () {},
-                                      child: Text('Signup'),
+                                      child: const Text('Signup'),
                                     ),
                                   ]),
                             )

@@ -1,15 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:motorapp/HomePage.dart';
-import 'package:motorapp/LoginPage.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:simple_animations/simple_animations.dart';
-import 'package:flutter_fadein/flutter_fadein.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:overlay_support/overlay_support.dart';
+
+
+import 'LoginPage.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky, overlays: []);
@@ -28,8 +26,8 @@ Future<void> main() async {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         debugShowCheckedModeBanner: false,
-        home: HomePage(userid: 'adnan',)
-        // home: LoginPage(),
+        // home: HomePage(userid: 'adnan',)
+        home: LoginPage(),
       ))
   );
 }
